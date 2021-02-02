@@ -4,16 +4,16 @@ import java.io.*;
 
 public class Program {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
-        String path = "c:\\temp\\in.txt";
+        String[] lines = new String[] {"Good morning","Good afternoon","Good night"};
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path)) ) {
-            String line = br.readLine();
+        String path = "c:\\temp\\out.txt";
 
-            while (line != null) {
-                System.out.println(line);
-                line = br.readLine();
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
+            for (String line :lines) {
+                bw.write(line);
+                bw.newLine();
             }
         }
         catch (IOException e) {
