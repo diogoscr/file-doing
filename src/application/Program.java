@@ -20,7 +20,7 @@ public class Program {
         File sourceFile = new File(sourceFileStr);
         String sourceFolderStr = sourceFile.getParent();
 
-        boolean mkdir = new File(sourceFolderStr + "\\out").mkdir();
+        new File(sourceFolderStr + "\\out").mkdir();
 
         String targetFileStr = sourceFolderStr + "\\out\\summary.csv";
 
@@ -51,7 +51,7 @@ public class Program {
                 e.printStackTrace();
             }
 
-            System.out.println(targetFileStr + "CREATED!");
+            System.out.println(targetFileStr + " CREATED!");
         }
         catch (IOException e) {
             e.printStackTrace();
